@@ -1,11 +1,12 @@
 
-package montecarlopi;
+package montecarlopi.controller;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.scene.control.ListView;
+import montecarlopi.model.Model;
 
 /**
  *
@@ -32,12 +33,7 @@ public class UpdateThread extends Thread {
                 return;
             }
 
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    test.generatePoint();
-                }
-            });
+            Platform.runLater(() -> test.generatePoint());
 
             try {
 

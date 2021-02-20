@@ -1,4 +1,4 @@
-package montecarlopi;
+package montecarlopi.model;
 
 
 import java.util.LinkedList;
@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import montecarlopi.controller.UpdateThread;
 
 public class Model extends Observable{
     private Circle c;
@@ -113,7 +114,7 @@ public class Model extends Observable{
              gc.setStroke(Color.BLUE); //outside
         }
         gc.setLineWidth(1);
-        gc.strokeRect((double)p.getX(),(double)p.getY(), 1, 1);
+        gc.strokeRect(p.getX(), p.getY(), 1, 1);
         
         setChanged();
         notifyObservers();
@@ -122,7 +123,6 @@ public class Model extends Observable{
     public void generateAuto (ListView<String> list,int count){
         setExit(false);
             UpdateThread ut = new UpdateThread(this, list, count);
-            count++;
             ut.start();
        
         
@@ -148,7 +148,7 @@ public class Model extends Observable{
     }
 
 
-    void stop(ListView<String> list) {
+    public void stop(ListView<String> list) {
         list.getItems().clear();
         exit=true;   
     }

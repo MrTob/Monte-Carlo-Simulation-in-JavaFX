@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import montecarlopi.controller.Controller;
 
 public class MontecarloPi extends Application { 
     @Override

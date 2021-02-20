@@ -1,4 +1,4 @@
-package montecarlopi;
+package montecarlopi.model;
 public class Point {
     private double x,y;
     

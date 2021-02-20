@@ -1,4 +1,5 @@
-package montecarlopi;
+package montecarlopi.model;
+
 public class Circle {
     private double diameter;
     
@@ -23,13 +24,9 @@ public class Circle {
         double b = ((float)diameter/2f)-(float)y;
         
         double c = (Math.sqrt(Math.pow(a, 2f) + (Math.pow(b, 2f))));
-        
-        
-        if(((double)diameter/2f) >= c) {
-            return true;
-        }
-        
-        return false;
+
+
+        return (diameter / 2f) >= c;
     }
     
     

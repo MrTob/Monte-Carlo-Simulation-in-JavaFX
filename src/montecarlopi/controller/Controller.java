@@ -1,8 +1,11 @@
-package montecarlopi;
+package montecarlopi.controller;
+
+import montecarlopi.model.Model;
+import montecarlopi.view.View;
 
 public class Controller {
-    private Model m = null;
-    private View v = null;
+    private Model m;
+    private View v;
     
     public Controller() {
         m = new Model();
